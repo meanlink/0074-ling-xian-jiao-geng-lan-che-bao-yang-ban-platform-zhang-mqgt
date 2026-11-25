@@ -1,0 +1,11 @@
+.roster-track section{display:grid;grid-template-columns:1fr 2.5fr;gap:1rem;padding:1.2rem;border:1px solid var(--s-line);margin-bottom:1rem;background:var(--s-panel);}
+.roster-track h2{align-self:center;}
+.roster-track ul,.spans{list-style:none;margin:0;padding:0;}
+.roster-track li,.spans li,.manifest>div{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:1rem;align-items:center;border-bottom:1px dotted var(--s-line);padding:.8rem 0;}
+.roster-track time{font:600 clamp(1rem,3vw,1.7rem) "IBM Plex Mono",monospace;}
+.spans li{grid-template-columns:1.05fr 2.1fr 1fr .45fr;}
+.manifest small{display:block;}
+.manifest meter{width:100%;}
+.track-bar{height:15px;position:relative;border-block:1px solid var(--s-line);background:repeating-linear-gradient(to right,var(--s-line) 0 1px,transparent 1px 25%);}
+.track-bar span{position:absolute;inset-block:2px;background:var(--s-accent);}
+@media(max-width:630px){.roster-track section{grid-template-columns:1fr;}.spans li{grid-template-columns:1fr 1fr;}}

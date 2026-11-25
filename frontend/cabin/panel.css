@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Barlow:wght@400;500;700&display=swap');
+:root{--s-page:oklch(95% .016 204);--s-panel:oklch(98% .015 198);--s-ink:oklch(26% .035 228);
+ --s-accent:oklch(40% .09 215);--s-line:oklch(74% .047 209);--s-muted:oklch(45% .038 218);
+ --s-display:"IBM Plex Mono","Noto Serif SC",serif;--s-body:"Barlow","Noto Sans SC",sans-serif;}
+.masthead{border-top:4px solid var(--s-accent);box-shadow:0 -1px 0 var(--s-line) inset;}
+.cabin-head{padding:1.25rem 0;border-bottom:3px double var(--s-line);margin-bottom:1rem;}
+.cabin-head p{max-width:70ch;margin-bottom:0;color:var(--s-muted);}
+.cabin-layout{display:grid;grid-template-columns:minmax(0,3.2fr) minmax(220px,1fr);gap:1rem;}
+.cabin-layout aside{align-self:start;border:1px solid var(--s-line);padding:1rem;background:var(--s-panel);}
+.cabin-layout form{display:grid;gap:.55rem;margin:.75rem 0;}
+.carry{border-left:5px solid var(--s-accent);background:var(--s-panel);padding:1rem;margin-bottom:.8rem;border-bottom:1px solid var(--s-line);}
+.carry header{display:flex;justify-content:space-between;margin-bottom:.65rem;}
+@media(max-width:767px){.cabin-layout{grid-template-columns:1fr;}}
