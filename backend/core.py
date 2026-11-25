@@ -91,3 +91,16 @@ def enqueue(connection, kind, payload, *, available_at=None):
            VALUES (%s,%s,COALESCE(%s::timestamptz,now())) RETURNING id""",
         (kind, Jsonb(payload, dumps=json.dumps), available_at),
     ).fetchone()["id"]
+
+def retry(connection, job_id):
+    """Requeue one failed job in place.
+
+    The same job row is reused so that a retried dispatch keeps operating on
+    the already frozen handoff instead of producing another one.
+    """
+    return connection.execute(
+        """UPDATE app_jobs SET status='queued',attempts=attempts+1,error=NULL,
+             finished_at=NULL,available_at=now()
+           WHERE id=%s AND status='failed' RETURNING id""",
+        (job_id,),
+    ).fetchone()

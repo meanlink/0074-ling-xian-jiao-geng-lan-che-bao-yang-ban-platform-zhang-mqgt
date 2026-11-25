@@ -11,6 +11,6 @@ def seed(cx):
         ('D-02','SHIFT-N1','M-043',500,540,'小杜',25),
         ('D-03','SHIFT-N1','M-044',535,590,'小林',100),
         ('D-04','SHIFT-A1','M-062',560,615,'小伍',100) ON CONFLICT DO NOTHING;
-      INSERT INTO followups(id,shift,work,matter) VALUES
-        ('NOTE-071','SHIFT-N1','M-043','请午班核对缺少流水编号的备件标签。') ON CONFLICT DO NOTHING;
+      INSERT INTO followups(id,origin,shift,work,matter) VALUES
+        ('NOTE-071','SHIFT-N1','SHIFT-N1','M-043','请午班核对缺少流水编号的备件标签。') ON CONFLICT DO NOTHING;
     """)
